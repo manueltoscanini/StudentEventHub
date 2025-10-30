@@ -53,9 +53,7 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ========================================
-// VALIDACIÓN DEL FORMULARIO
-// ========================================
+
 
 document.getElementById('eventForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -133,9 +131,7 @@ document.querySelectorAll('#eventForm input, #eventForm select, #eventForm texta
     });
 });
 
-// ========================================
-// ESTABLECER FECHA MÍNIMA (HOY)
-// ========================================
+//fecha minima
 
 window.addEventListener('DOMContentLoaded', function() {
     const dateInput = document.getElementById('eventDate');
@@ -227,10 +223,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-// ========================================
-// MODAL DE CONFIRMACIÓN DE ELIMINACIÓN
-// ========================================
+//confirmar eliminacion
 
 function openDeleteModal(button) {
     const eventId = button.getAttribute('data-event-id');
@@ -263,9 +256,7 @@ document.getElementById('deleteModal')?.addEventListener('click', function(e) {
     }
 });
 
-// ========================================
-// MODAL DE EDICIÓN DE EVENTOS
-// ========================================
+//editar evento
 
 function openEditModal(button) {
     const eventId = button.getAttribute('data-event-id');

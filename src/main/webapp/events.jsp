@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="Models.Event" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <%
     // Verificar sesión
     if (session == null || session.getAttribute("student") == null) {
@@ -101,7 +102,10 @@
         </div>
 
         <!-- LISTA DE EVENTOS -->
-        <% if (events != null && !events.isEmpty()) { %>
+        <% 
+            DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            if (events != null && !events.isEmpty()) { 
+        %>
         <div class="events-container">
             <% for (Event event : events) { %>
             <div class="event-card">
@@ -117,7 +121,7 @@
                 <div class="event-card-body">
                     <div class="event-info">
                         <span class="icon">📅</span>
-                        <span><%= event.getEventDate() %></span>
+                        <span><%= event.getEventDate().format(formatoFecha) %></span>
                     </div>
 
                     <% if (event.getStartTime() != null) { %>
